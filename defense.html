@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>ID Egypt | هيئة التنظيم والإدارة - القوات المسلحة</title>
+    <link rel="stylesheet" href="style.css"> <style>
+        .military-card {
+            background: linear-gradient(135deg, #1a2a1a, #2c3e50); /* ألوان زيتية عسكرية */
+            padding: 30px; border-radius: 15px; border: 2px solid #f1c40f;
+            margin-bottom: 30px; position: relative; overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.6);
+        }
+        .military-card::after {
+            content: "ARMED FORCES"; position: absolute; left: -20px; top: -10px;
+            font-size: 4rem; opacity: 0.05; color: #fff; font-weight: bold; transform: rotate(-10deg);
+        }
+        .rank-box {
+            display: inline-block; background: #f1c40f; color: #000;
+            padding: 5px 15px; border-radius: 5px; font-weight: bold; margin-bottom: 15px;
+        }
+        .permit-status {
+            background: rgba(46, 204, 113, 0.2); border: 1px solid #2ecc71;
+            color: #2ecc71; padding: 10px; border-radius: 8px; margin-top: 10px;
+        }
+        .stamp-military {
+            border: 3px double #e74c3c; color: #e74c3c; padding: 10px;
+            display: inline-block; border-radius: 50%; font-weight: bold;
+            transform: rotate(-20deg); width: 80px; height: 80px;
+            text-align: center; line-height: 1.2; font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo"><img src="c:\Users\c 2 d\OneDrive\Desktop\met\Screenshot 2026-04-20 143402.png" alt="ID Egypt" style="height: 40px;"></div>
+        <a href="index.html" style="color:#f1c40f; text-decoration:none; font-weight:bold;">العودة للوحة التحكم</a>
+    </header>
+
+    <section>
+        <h1 style="color: #f1c40f;">هيئة التنظيم والإدارة للقوات المسلحة</h1>
+        <p>إدارة التجنيد والتعبئة - بوابة الخدمات الإلكترونية</p>
+        
+        <div class="military-card">
+            <div class="rank-box">شهادة المعاملة العسكرية</div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <p><strong>الاسم:</strong> <span id="mil-name" style="font-size: 1.2rem; color: #f1c40f;"></span></p>
+                    <p><strong>الرقم الثلاثي:</strong> <span style="letter-spacing: 3px;">123 / 2026 / 445</span></p>
+                    <p><strong>الموقف التجنيدي:</strong> قدوة حسنة (إنهاء الخدمة)</p>
+                    <p><strong>تاريخ التسريح:</strong> 01-12-2025</p>
+                </div>
+                <div style="text-align: center;">
+                    <div class="stamp-military">إدارة التجنيد<br>مُعتمد</div>
+                    <br>
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=70x70&data=Military-ID-Verified" style="margin-top:10px; border:1px solid #fff;">
+                </div>
+            </div>
+        </div>
+
+        <div class="service-box">
+            <h3>✈️ طلبات تصريح السفر للمجندين والاحتياط</h3>
+            <div class="permit-status">
+                <strong>حالة آخر طلب:</strong> تم الموافقة على تصريح السفر رقم (EF-9980)
+                <br><small>صالح لمدة 30 يوم من تاريخ الصدور</small>
+            </div>
+            <div style="margin-top: 20px;">
+                <button class="login-btn" style="width: auto; padding: 10px 25px;" onclick="alert('تم إرسال نسخة التصريح الرقمي إلى محفظتك')">استخراج تصريح سفر جديد</button>
+                <button class="login-btn" style="width: auto; padding: 10px 25px; background:#34495e; color:white; margin-right:10px;" onclick="window.print()">طباعة الشهادة</button>
+            </div>
+        </div>
+
+        <div class="services-grid" style="margin-top: 20px;">
+            <div class="service-box">
+                <h4>قيد زملاء الدفعة</h4>
+                <p>استعلام عن بيانات دفعة التجنيد (سرية).</p>
+                <a href="#" class="sector-link">دخول القطاع</a>
+            </div>
+            <div class="service-box">
+                <h4>نظم المعاشات العسكرية</h4>
+                <p>عرض تفاصيل المستحقات المالية.</p>
+                <a href="#" class="sector-link">عرض التفاصيل</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+  
+        window.onload = function() {
+            const userName = localStorage.getItem('userName');
+            if (userName) {
+                document.getElementById('mil-name').innerText = userName;
+            } else {
+                document.getElementById('mil-name').innerText = "بيانات غير مسجلة";
+            }
+        };
+    </script>
+
+</body>
+</html>

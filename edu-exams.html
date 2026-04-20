@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Egypt | أرقام الجلوس واللجان</title>
+    <style>
+        :root { 
+            --egypt-gold: #c5a059; 
+            --dark-black: #0a0a0a; 
+            --card-bg: rgba(255,255,255,0.05);
+        }
+        
+        body { 
+            background-color: var(--dark-black); 
+            background-image: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), 
+                              url('c:/Users/c 2 d/OneDrive/Desktop/met/Screenshot 2026-04-20 143402.png');
+            background-size: cover;
+            background-attachment: fixed;
+            color: white; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            padding: 20px;
+        }
+
+        .header-box {
+            border-bottom: 2px solid var(--egypt-gold);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .exam-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            border-radius: 15px;
+            padding: 25px;
+            max-width: 700px;
+            margin: 0 auto;
+            backdrop-filter: blur(10px);
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .info-row:last-child { border: none; }
+
+        .label { color: var(--egypt-gold); font-weight: bold; }
+        
+        .value { font-size: 1.1rem; }
+
+        .seat-number {
+            font-size: 2.5rem;
+            color: var(--egypt-gold);
+            text-align: center;
+            margin: 20px 0;
+            font-weight: bold;
+            letter-spacing: 5px;
+            text-shadow: 0 0 15px rgba(197, 160, 89, 0.4);
+        }
+
+        .back-btn {
+            color: var(--egypt-gold);
+            text-decoration: none;
+            border: 1px solid var(--egypt-gold);
+            padding: 8px 20px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover { background: var(--egypt-gold); color: black; }
+
+        .stamp-box {
+            border: 2px dashed rgba(197, 160, 89, 0.5);
+            padding: 10px;
+            margin-top: 20px;
+            text-align: center;
+            color: var(--egypt-gold);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-box">
+        <h2>📑 بطاقة رقم الجلوس الرقمية</h2>
+        <a href="index.html" class="back-btn">العودة للرئيسية</a>
+    </div>
+
+    <div class="exam-card">
+        <div style="text-align: center; margin-bottom: 20px;">
+            <img src="c:\Users\c 2 d\OneDrive\Desktop\met\Screenshot 2026-04-20 143402.png" height="60" style="filter: grayscale(1) brightness(2);">
+            <p style="margin-top: 10px; color: #aaa;">وزارة التربية والتعليم والتعليم الفني</p>
+        </div>
+
+        <div class="info-row">
+            <span class="label">اسم الطالب:</span>
+            <span class="value" id="student-name">جاري التحميل...</span>
+        </div>
+
+        <div class="info-row">
+            <span class="label">الرقم القومي:</span>
+            <span class="value" id="student-id">---------</span>
+        </div>
+
+        <div class="seat-number">
+            104592
+        </div>
+        <p style="text-align: center; color: #888; font-size: 0.9rem;">رقم الجلوس الموحد</p>
+
+        <div class="info-row">
+            <span class="label">المدرسة:</span>
+            <span class="value">مدرسة المتفوقين الثانوية</span>
+        </div>
+
+        <div class="info-row">
+            <span class="label">اللجنة الامتحانية:</span>
+            <span class="value">مدرسة النصر الرسمية - لجنة رقم (14)</span>
+        </div>
+
+        <div class="info-row">
+            <span class="label">مقر اللجنة:</span>
+            <span class="value">القاهرة - حي المعادي - شارع الـ 10</span>
+        </div>
+
+        <div class="stamp-box">
+            معتمد رقمياً من منظومة ID Egypt - 2026
+        </div>
+    </div>
+
+    <script>
+        // سحب البيانات من المتصفح عشان تظهر باسم المستخدم اللي دخل
+        window.onload = function() {
+            const savedName = localStorage.getItem('userName');
+            const savedId = localStorage.getItem('userId');
+            
+            if (savedName) {
+                document.getElementById('student-name').innerText = savedName;
+                document.getElementById('student-id').innerText = savedId;
+            }
+        }
+    </script>
+</body>
+</html>

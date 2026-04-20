@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>ID Egypt | منظومة المرافق الموحدة</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root { --electric: #f1c40f; --water: #3498db; --gas: #e67e22; --net: #9b59b6; }
+        .utility-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
+        .card-util {
+            background: rgba(255, 255, 255, 0.05); padding: 25px; border-radius: 15px;
+            border-top: 5px solid #ccc; position: relative; transition: 0.3s;
+        }
+        .usage-circle {
+            width: 80px; height: 80px; border-radius: 50%; border: 4px solid rgba(255,255,255,0.1);
+            display: flex; align-items: center; justify-content: center; margin-bottom: 15px;
+            font-weight: bold; font-size: 1.2rem;
+        }
+        .btn-pay { width: 100%; padding: 10px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 15px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo"><img src="c:\Users\c 2 d\OneDrive\Desktop\met\Screenshot 2026-04-20 143402.png" height="40"></div>
+        <a href="index.html" style="color:#f1c40f; text-decoration:none; font-weight:bold;">العودة للوحة التحكم</a>
+    </header>
+
+    <section>
+        <h1>إدارة المرافق الذكية</h1>
+        <p>مرحباً بالسيد/ <span id="user-name-display" style="color:#f1c40f; font-weight:bold;"></span></p>
+
+        <div class="utility-grid">
+            <div class="card-util" style="border-color: var(--electric);">
+                <div class="usage-circle" id="elec-circle" style="color: var(--electric); border-color: var(--electric);">--</div>
+                <h3>⚡ الكهرباء</h3>
+                <p>رقم العداد: <span id="elec-id">--</span></p>
+                <p>الرصيد المتبقي: <strong id="elec-balance">--</strong> جم</p>
+                <button class="btn-pay" style="background: var(--electric);">شحن الكارت</button>
+            </div>
+
+            <div class="card-util" style="border-color: var(--water);">
+                <div class="usage-circle" id="water-circle" style="color: var(--water); border-color: var(--water);">--</div>
+                <h3>💧 المياه</h3>
+                <p>كود المشترك: <span id="water-id">--</span></p>
+                <p>الاستهلاك: <strong id="water-usage">--</strong> م³</p>
+                <button class="btn-pay" style="background: var(--water); color:white;">دفع الفاتورة</button>
+            </div>
+
+            <div class="card-util" style="border-color: var(--gas);">
+                <div class="usage-circle" id="gas-circle" style="color: var(--gas); border-color: var(--gas);">--</div>
+                <h3>🔥 الغاز الطبيعي</h3>
+                <p>رقم الحساب: <span id="gas-id">--</span></p>
+                <p>فاتورة الشهر: <strong id="gas-bill">--</strong> جم</p>
+                <button class="btn-pay" style="background: var(--gas); color:white;">سداد فوري</button>
+            </div>
+
+            <div class="card-util" style="border-color: var(--net);">
+                <div class="usage-circle" id="net-circle" style="color: var(--net); border-color: var(--net);">--</div>
+                <h3>🌐 الإنترنت</h3>
+                <p>رقم الخط: <span id="net-id">--</span></p>
+                <p>المتبقي: <strong id="net-left">--</strong> GB</p>
+                <button class="btn-pay" style="background: var(--net); color:white;">تجديد الباقة</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        window.onload = function() {
+            // 1. عرض الاسم
+            const name = localStorage.getItem('userName') || "مواطن مصري";
+            document.getElementById('user-name-display').innerText = name;
+
+            // 2. وظيفة لتوليد أرقام عشوائية
+            function getRandom(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
+
+    
+            
+            // كهرباء
+            document.getElementById('elec-id').innerText = getRandom(100000, 999999);
+            document.getElementById('elec-balance').innerText = getRandom(10, 500);
+            document.getElementById('elec-circle').innerText = getRandom(10, 99) + "%";
+
+            // مياه
+            document.getElementById('water-id').innerText = getRandom(2000, 8000);
+            document.getElementById('water-usage').innerText = getRandom(5, 40);
+            document.getElementById('water-circle').innerText = getRandom(5, 50) + "م³";
+
+            // غاز
+            document.getElementById('gas-id').innerText = "11-44-" + getRandom(100, 999);
+            document.getElementById('gas-bill').innerText = getRandom(30, 200);
+            document.getElementById('gas-circle').innerText = getRandom(60, 100) + "%";
+
+            document.getElementById('net-id').innerText = "02" + getRandom(20000000, 29999999);
+            document.getElementById('net-left').innerText = getRandom(1, 140);
+            document.getElementById('net-circle').innerText = getRandom(10, 250) + "G";
+        };
+    </script>
+</body>
+</html>

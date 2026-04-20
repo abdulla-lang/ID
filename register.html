@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Egypt | إنشاء الملف الموحد</title>
+    <style>
+        :root { 
+            --egypt-gold: #c5a059; 
+            --dark-black: #0a0a0a; 
+            --glass-bg: rgba(255, 255, 255, 0.05);
+        }
+        
+        body { 
+            background-color: var(--dark-black); 
+            background-image: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), 
+                              url('c:/Users/c 2 d/OneDrive/Desktop/met/Screenshot 2026-04-20 143402.png');
+            background-size: cover;
+            background-attachment: fixed;
+            color: white; 
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .reg-box {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            padding: 40px;
+            border-radius: 25px;
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            width: 100%;
+            max-width: 700px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+        }
+
+        h2 { 
+            color: var(--egypt-gold); 
+            text-align: center; 
+            margin-bottom: 10px;
+            font-size: 2rem;
+        }
+
+        .section-title {
+            color: var(--egypt-gold);
+            border-right: 3px solid var(--egypt-gold);
+            padding-right: 10px;
+            margin: 25px 0 15px 0;
+            font-weight: bold;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .full { grid-column: span 2; }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(0,0,0,0.4);
+            color: white;
+            outline: none;
+            box-sizing: border-box;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: var(--egypt-gold);
+            background: rgba(0,0,0,0.6);
+        }
+
+        .submit-btn {
+            background: var(--egypt-gold);
+            color: black;
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #d4af37;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(197, 160, 89, 0.2);
+        }
+
+        @media (max-width: 600px) {
+            .form-grid { grid-template-columns: 1fr; }
+            .full { grid-column: span 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="reg-box">
+        <h2>📝 تسجيل البيانات الوطنية</h2>
+        <p style="text-align:center; color:#888; margin-bottom:30px;">يتم استخدام هذه البيانات لإنشاء هويتك الرقمية وتفعيل خدمات الدولة.</p>
+
+        <form id="regForm">
+            <div class="section-title">البيانات الأساسية</div>
+            <div class="form-grid">
+                <div class="full">
+                    <label>الاسم الرباعي</label>
+                    <input type="text" id="name" placeholder="أدخل اسمك كما هو في بطاقة الرقم القومي" required>
+                </div>
+                <div>
+                    <label>الرقم القومي (14 رقم)</label>
+                    <input type="text" id="nationalId" maxlength="14" placeholder="29XXXXXXXXXXXX" required>
+                </div>
+                <div>
+                    <label>تاريخ الميلاد</label>
+                    <input type="date" id="dob" required>
+                </div>
+            </div>
+
+            <div class="section-title">السجل الأكاديمي</div>
+            <div class="form-grid">
+                <div class="full">
+                    <label>الجامعة</label>
+                    <input type="text" id="university" placeholder="مثال: جامعة القاهرة">
+                </div>
+                <div>
+                    <label>الكلية / التخصص</label>
+                    <select id="faculty">
+                        <option value="الحاسبات والمعلومات">الحاسبات والمعلومات</option>
+                        <option value="الهندسة">الهندسة</option>
+                        <option value="التجارة والاقتصاد">التجارة والاقتصاد</option>
+                        <option value="الطب">الطب</option>
+                        <option value="الحقوق">الحقوق</option>
+                    </select>
+                </div>
+                <div>
+                    <label>سنة التخرج</label>
+                    <input type="number" id="gradYear" placeholder="2020">
+                </div>
+                <div class="full">
+                    <label>عنوان رسالة الدراسات العليا (اختياري)</label>
+                    <input type="text" id="thesis" placeholder="اتركها فارغة إذا كنت لم تناقش ماجستير/دكتوراه بعد">
+                </div>
+            </div>
+
+            <button type="button" class="submit-btn" onclick="registerUser()">حفظ وتفعيل الملف الرقمي</button>
+        </form>
+    </div>
+
+    <script>
+        function registerUser() {
+            const userData = {
+                userName: document.getElementById('name').value,
+                userId: document.getElementById('nationalId').value,
+                userDob: document.getElementById('dob').value,
+                userUni: document.getElementById('university').value,
+                userFaculty: document.getElementById('faculty').value,
+                userGradYear: document.getElementById('gradYear').value,
+                userThesis: document.getElementById('thesis').value,
+                isRegistered: 'true'
+            };
+
+            if(userData.userName === "" || userData.userId.length < 14) {
+                alert("برجاء إكمال البيانات الأساسية بشكل صحيح.");
+                return;
+            }
+
+            localStorage.setItem('userName', userData.userName);
+            localStorage.setItem('userId', userData.userId);
+            localStorage.setItem('userDob', userData.userDob);
+            localStorage.setItem('userUni', userData.userUni);
+            localStorage.setItem('userFaculty', userData.userFaculty);
+            localStorage.setItem('userGradYear', userData.userGradYear);
+            localStorage.setItem('userThesis', userData.userThesis);
+            localStorage.setItem('isRegistered', 'true');
+
+            alert("تم تسجيل بياناتك بنجاح في قاعدة بيانات ID Egypt.");
+            
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>

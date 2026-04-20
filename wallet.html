@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>ID Egypt | المحفظة الرقمية الموحدة</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root { --gold: #f1c40f; --dark-card: #121212; --egypt-red: #c0392b; }
+        
+        .wallet-scroll { display: flex; flex-direction: column; gap: 20px; align-items: center; padding-bottom: 50px; }
+        
+
+        .id-card-digital {
+            width: 350px; height: 210px; background: linear-gradient(135deg, #e1e8ee, #f9f9f9);
+            border-radius: 15px; color: #333; padding: 15px; position: relative;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3); border: 1px solid #ccc; overflow: hidden;
+        }
+        .id-card-digital::before { content: "جمهورية مصر العربية"; position: absolute; top: 10px; left: 15px; font-size: 0.7rem; font-weight: bold; color: var(--egypt-red); }
+        
+        .birth-cert-digital {
+            width: 350px; background: #fff; border: 5px double #27ae60; padding: 20px;
+            color: #000; border-radius: 5px; position: relative;
+        }
+
+        .pay-card {
+            width: 350px; background: var(--dark-card); border-radius: 20px; padding: 20px;
+            border: 1px solid var(--gold); text-align: center;
+        }
+
+        .user-photo-placeholder {
+            width: 80px; height: 100px; background: #ddd; border: 2px solid #555;
+            float: left; margin-right: 10px; display: flex; align-items: center; justify-content: center; font-size: 0.6rem;
+        }
+
+        .chip { width: 40px; height: 30px; background: linear-gradient(135deg, #ffd700, #b8860b); border-radius: 5px; margin-bottom: 10px; }
+        
+        .nav-wallet { position: fixed; bottom: 0; width: 100%; background: #1a1a1a; display: flex; justify-content: space-around; padding: 10px 0; border-top: 2px solid var(--gold); }
+    </style>
+</head>
+<body style="background: #000;">
+
+    <header>
+        <div class="logo"><img src="c:\Users\c 2 d\OneDrive\Desktop\met\Screenshot 2026-04-20 143402.png" height="35"></div>
+        <a href="index.html" style="color:var(--gold); text-decoration:none;">خروج</a>
+    </header>
+
+    <section class="wallet-scroll">
+        <h2 style="color: var(--gold); text-align: center;">محفظتي الرقمية</h2>
+
+        <div class="id-card-digital">
+            <div style="display: flex; justify-content: space-between;">
+                <div class="user-photo-placeholder">صورة المواطن</div>
+                <div style="text-align: right; flex: 1;">
+                    <p style="margin:0; font-size: 0.8rem; font-weight: bold;">بطاقة تحقيق الشخصية</p>
+                    <p style="margin:5px 0; font-size: 0.9rem;" id="id-name">--</p>
+                    <p style="margin:0; font-size: 0.7rem;">العنوان: <span id="id-address">القاهرة - مدينة نصر</span></p>
+                </div>
+            </div>
+            <div style="margin-top: 20px; font-family: monospace; font-weight: bold; font-size: 1.1rem; letter-spacing: 2px;" id="id-num">--</div>
+            <p style="font-size: 0.6rem; position: absolute; bottom: 10px; right: 15px;">تاريخ الانتهاء: 2031/12/01</p>
+        </div>
+
+        <div class="birth-cert-digital">
+            <div style="text-align: center; border-bottom: 1px solid #27ae60; margin-bottom: 10px;">
+                <p style="margin: 0; font-weight: bold;">وثيقة ميلاد مميكنة</p>
+            </div>
+            <p style="font-size: 0.8rem;">الاسم: <strong id="birth-name">--</strong></p>
+            <p style="font-size: 0.8rem;">تاريخ الميلاد: 2000/01/01</p>
+            <p style="font-size: 0.8rem;">محل الميلاد: جمهورية مصر العربية</p>
+            <div style="text-align: center;">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=60x60&data=BIRTH-CERT-VERIFIED" width="60">
+            </div>
+        </div>
+
+        <div class="pay-card">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="chip"></div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1280px-Mastercard-logo.svg.png" width="40">
+            </div>
+            <p style="color: #fff; font-size: 0.8rem; margin: 10px 0;">امسح الكود للدفع اللحظي (InstaPay)</p>
+            <div style="background: #fff; padding: 10px; border-radius: 10px; display: inline-block;">
+                <img id="bank-qr" src="" alt="Bank QR" width="150">
+            </div>
+            <p style="color: var(--gold); margin-top: 10px; font-weight: bold;" id="card-user-pay">--</p>
+        </div>
+
+        <div class="id-card-digital" style="background: linear-gradient(135deg, #d4fc79, #96e6a1); border-color: #27ae60;">
+            <p style="margin:0; font-weight: bold; font-size: 0.8rem;">رخصة قيادة خاصة</p>
+            <p id="drive-name" style="margin: 5px 0;">--</p>
+            <p style="font-size: 0.7rem;">نوع المركبة: ملاكي</p>
+            <p style="font-size: 0.7rem;">الأكواد المرورية: B-01</p>
+        </div>
+
+    </section>
+
+    <div class="nav-wallet">
+        <div style="text-align:center; color:var(--gold); font-size:0.7rem;">🏠<br>الرئيسية</div>
+        <div style="text-align:center; color:#fff; font-size:0.7rem;">💳<br>الكروت</div>
+        <div style="text-align:center; color:#fff; font-size:0.7rem;">📊<br>النشاط</div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const name = localStorage.getItem('userName') || "مواطن مصري";
+            const id = localStorage.getItem('userId') || "00000000000000";
+            
+            document.getElementById('id-name').innerText = name;
+            document.getElementById('birth-name').innerText = name;
+            document.getElementById('drive-name').innerText = name;
+            document.getElementById('card-user-pay').innerText = name.toUpperCase();
+            document.getElementById('id-num').innerText = id;
+
+        
+            const bankData = "PAY-TO:" + name + "|ACC:" + id;
+            document.getElementById('bank-qr').src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + encodeURIComponent(bankData);
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>ID Egypt | منظومة الدعم والتموين</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root { --supply-green: #27ae60; --bread-gold: #f39c12; }
+        
+        .supply-container { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+        
+        .card-supply {
+            background: rgba(255, 255, 255, 0.05); padding: 25px; border-radius: 15px;
+            border-bottom: 5px solid var(--supply-green); position: relative;
+        }
+
+        .items-list { background: rgba(0,0,0,0.2); padding: 15px; border-radius: 10px; margin-top: 15px; }
+        .item-row { display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.05); padding: 8px 0; }
+        
+        .badge-count { background: var(--bread-gold); color: #000; padding: 2px 10px; border-radius: 10px; font-weight: bold; }
+        
+        .qr-section { text-align: center; background:white; padding: 10px; border-radius: 10px; width: fit-content; margin: 10px auto; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo"><img src="c:\Users\c 2 d\OneDrive\Desktop\met\Screenshot 2026-04-20 143402.png" height="40"></div>
+        <a href="index.html" style="color:#f1c40f; text-decoration:none; font-weight:bold;">العودة للوحة التحكم</a>
+    </header>
+
+    <section>
+        <h1 style="color: var(--supply-green);">وزارة التموين والتجارة الداخلية</h1>
+        <p>مرحباً بالسيد/ <span id="user-name" style="color:#f1c40f; font-weight:bold;"></span></p>
+
+        <div class="supply-container">
+            <div class="card-supply">
+                <h3>💳 بطاقة التموين الذكية</h3>
+                <p>رقم البطاقة: <span id="card-num">--</span></p>
+                <p>عدد الأفراد المستفيدين: <span class="badge-count" id="family-count">--</span> أفراد</p>
+                <p>حالة البطاقة: <span style="color:#2ecc71">نشطة (صرف كلي)</span></p>
+                
+                <div class="qr-section">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=SUPPLY-EGY-2026" alt="QR Code">
+                    <p style="color:#000; font-size:0.7rem; margin:0;">كود الصرف السريع</p>
+                </div>
+            </div>
+
+            <div class="card-supply" style="border-color: var(--bread-gold);">
+                <h3>🍞 أرصدة الدعم المتاحة</h3>
+                <div class="items-list">
+                    <div class="item-row">
+                        <span>رصيد السلع التموينية:</span>
+                        <strong style="color:var(--supply-green)"><span id="money-credit">--</span> جم</strong>
+                    </div>
+                    <div class="item-row">
+                        <span>فارق نقاط الخبز:</span>
+                        <strong style="color:var(--bread-gold)"><span id="bread-points">--</span> نقطة</strong>
+                    </div>
+                    <div class="item-row">
+                        <span>آخر عملية صرف:</span>
+                        <small id="last-date">--</small>
+                    </div>
+                </div>
+                <button class="login-btn" style="margin-top:15px;" onclick="alert('تم إرسال طلب إضافة أفراد للمراجعة الأمنية')">إضافة أفراد جدد</button>
+            </div>
+        </div>
+
+        <div class="service-box" style="margin-top: 30px;">
+            <h3>🛒 قائمة السلع المتاحة لهذا الشهر</h3>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; font-size: 0.9rem; text-align: center;">
+                <div style="background:rgba(255,255,255,0.05); padding:10px; border-radius:5px;">زيت خليط (800 مل)</div>
+                <div style="background:rgba(255,255,255,0.05); padding:10px; border-radius:5px;">سكر معبأ (1 كجم)</div>
+                <div style="background:rgba(255,255,255,0.05); padding:10px; border-radius:5px;">مكرونة (400 جم)</div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        window.onload = function() {
+            // جلب الاسم من الذاكرة
+            document.getElementById('user-name').innerText = localStorage.getItem('userName') || "مواطن مصري";
+
+            // توليد بيانات عشوائية متغيرة لكل تسجيل دخول
+            function getRandom(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
+
+            document.getElementById('card-num').innerText = "1" + getRandom(10000000000, 99999999999);
+            document.getElementById('family-count').innerText = getRandom(2, 6);
+            document.getElementById('money-credit').innerText = getRandom(50, 300);
+            document.getElementById('bread-points').innerText = getRandom(10, 150);
+            
+            const dates = ["02-04-2026", "10-04-2026", "15-04-2026"];
+            document.getElementById('last-date').innerText = dates[getRandom(0, 2)];
+        };
+    </script>
+</body>
+</html>

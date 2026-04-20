@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>ID Egypt | البورصة العالمية والمنظومة الضريبية</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root { --bull: #2ecc71; --bear: #e74c3c; --gold: #f1c40f; }
+        
+        .market-header {
+            display: flex; gap: 20px; overflow-x: auto; background: rgba(0,0,0,0.5);
+            padding: 10px; border-bottom: 2px solid var(--gold); margin-bottom: 20px;
+        }
+        .ticker-item { white-space: nowrap; font-family: monospace; font-size: 0.9rem; }
+        .up { color: var(--bull); } .down { color: var(--bear); }
+
+        .finance-container { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
+        
+        .stock-card {
+            background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px;
+            border-right: 4px solid var(--gold); margin-bottom: 15px;
+        }
+
+        .chart-mockup {
+            width: 100%; height: 150px; background: url('https://Cdn.pixabay.com/photo/2016/11/27/21/42/stock-1863880_1280.jpg');
+            background-size: cover; border-radius: 10px; opacity: 0.3; margin: 10px 0;
+        }
+
+        .tax-badge {
+            background: var(--bull); color: #000; padding: 5px 15px;
+            border-radius: 5px; font-weight: bold; font-size: 0.8rem;
+        }
+
+        .global-card { background: linear-gradient(135deg, #1e3799, #0c2461); border: 1px solid #4a69bd; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo"><img src="c:\Users\c 2 d\OneDrive\Desktop\met\Screenshot 2026-04-20 143402.png" alt="ID Egypt" style="height: 40px;"></div>
+        <a href="index.html" style="color:var(--gold); text-decoration:none; font-weight:bold;">العودة للمركز الرئيسي</a>
+    </header>
+
+    <div class="market-header">
+        <div class="ticker-item">EGX30: <span class="up">28,450.12 ▲ 1.2%</span></div>
+        <div class="ticker-item">S&P 500: <span class="up">5,120.44 ▲ 0.8%</span></div>
+        <div class="ticker-item">NASDAQ: <span class="down">16,200.10 ▼ 0.3%</span></div>
+        <div class="ticker-item">BTC/USD: <span class="up">$64,250 ▲ 2.5%</span></div>
+        <div class="ticker-item">USD/EGP: <span class="up">48.55</span></div>
+    </div>
+
+    <section>
+        <h1 style="color: var(--gold);">مركز الاستثمار والضرائب الموحد</h1>
+
+        <div class="finance-container">
+            <div>
+                <div class="stock-card">
+                    <h3>🇪🇬 المحفظة المحلية (EGX)</h3>
+                    <p>إجمالي القيمة السوقية: <strong>850,400 جم</strong></p>
+                    <div class="chart-mockup"></div>
+                    <table style="width:100%; text-align:right;">
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                            <th>السهم</th><th>الكمية</th><th>الربح/الخسارة</th>
+                        }
+                        <tr><td>البنك التجاري الدولي (CIB)</td><td>500</td><td class="up">+15,200 جم</td></tr>
+                        <tr><td>مجموعة طلعت مصطفى (TMG)</td><td>1200</td><td class="up">+8,400 جم</td></tr>
+                        <tr><td>بلتون القابضة</td><td>3000</td><td class="down">-1,100 جم</td></tr>
+                    </table>
+                </div>
+
+                <div class="stock-card global-card">
+                    <h3>🇺🇸 المحفظة العالمية (NYSE / NASDAQ)</h3>
+                    <p>إجمالي القيمة السوقية: <strong>$12,550.00</strong></p>
+                    <table style="width:100%; text-align:right;">
+                        <tr><td>NVIDIA (NVDA)</td><td>10</td><td class="up">+$840.00</td></tr>
+                        <tr><td>Apple (AAPL)</td><td>25</td><td class="up">+$210.00</td></tr>
+                        <tr><td>Tesla (TSLA)</td><td>15</td><td class="down">-$350.00</td></tr>
+                    </table>
+                    <button class="login-btn" style="margin-top:15px; background:var(--gold); color:#000;">فتح منصة التداول العالمي</button>
+                </div>
+            </div>
+
+            <div>
+                <div class="service-box" style="border-right: 4px solid var(--bull);">
+                    <h3>🧾 الضرائب (ETA)</h3>
+                    <p>رقم التسجيل: 554-110-992</p>
+                    <div style="margin: 15px 0;">
+                        <span class="tax-badge">الموقف: مسدد بالكامل</span>
+                    </div>
+                    <p>آخر إقرار ضريبي: <strong>2025/2026</strong></p>
+                    <hr style="opacity:0.1;">
+                    <small>لا توجد مستحقات متأخرة على اسمك حالياً.</small>
+                    <button class="login-btn" style="padding:10px; font-size:0.8rem; margin-top:10px;">استخراج شهادة براءة ذمة</button>
+                </div>
+
+                <div class="service-box" style="margin-top:20px; border-right: 4px solid #3498db;">
+                    <h3>⚓ الجمارك (ACIA)</h3>
+                    <p>شحنات واردة برقم قومي: <strong>(1) شحنة</strong></p>
+                    <p style="font-size:0.9rem;">وصف: طرد شخصي (معدات إلكترونية)</p>
+                    <p>الرسوم الجمركية: 1,250 جم</p>
+                    <button class="login-btn" style="background:#3498db; color:white; padding:10px;" onclick="alert('تم السداد من حسابك البنكي المربوط')">سداد الرسوم والإفراج</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="margin-top:50px; text-align:center; opacity:0.5;">
+        <p>البيانات المعروضة تتحدث لحظياً من شبكة ID Egypt المالية</p>
+    </footer>
+
+    <script>
+        window.onload = function() {
+            const name = localStorage.getItem('userName');
+            console.log("Finance Sector Access: " + name);
+        }
+    </script>
+</body>
+</html>

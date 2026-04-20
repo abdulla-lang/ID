@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Egypt | شهادة البكالوريوس الرسمية</title>
+    <style>
+        :root { 
+            --egypt-gold: #c5a059; 
+            --dark-black: #0a0a0a; 
+        }
+        
+        body { 
+            background-color: var(--dark-black); 
+            background-image: linear-gradient(rgba(0,0,0,0.95), rgba(0,0,0,0.95)), 
+                              url('c:/Users/c 2 d/OneDrive/Desktop/met/Screenshot 2026-04-20 143402.png');
+            background-size: cover;
+            background-attachment: fixed;
+            color: #1a1a1a; 
+            font-family: 'Amiri', 'Times New Roman', serif;
+            margin: 0; padding: 20px;
+        }
+
+        .cert-frame {
+            max-width: 850px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 40px;
+            border: 15px solid #1a1a1a;
+            outline: 3px solid var(--egypt-gold);
+            position: relative;
+            box-shadow: 0 0 40px rgba(0,0,0,0.8);
+            background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+        }
+
+        .inner-line {
+            border: 1px solid var(--egypt-gold);
+            padding: 30px;
+            height: 100%;
+        }
+
+        .cert-header { text-align: center; }
+        
+        .gov-name { font-size: 1.4rem; font-weight: bold; margin-bottom: 5px; }
+        
+        .uni-logo { height: 80px; margin: 15px 0; }
+
+        .cert-title {
+            font-size: 3rem;
+            color: #c5a059;
+            margin: 10px 0;
+            font-family: 'Sakkal Majalla', serif;
+        }
+
+        .cert-content {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .user-data {
+            font-weight: bold;
+            color: #000;
+            border-bottom: 1px dashed #000;
+            padding: 0 5px;
+        }
+
+        .signatures-area {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .seal {
+            width: 80px;
+            height: 80px;
+            border: 2px solid #c5a059;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #c5a059;
+            font-size: 0.7rem;
+            transform: rotate(-20deg);
+        }
+
+        .back-btn {
+            display: block;
+            width: fit-content;
+            margin: 0 auto 15px;
+            color: var(--egypt-gold);
+            text-decoration: none;
+            border: 1px solid var(--egypt-gold);
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-btn">← العودة للوحة التحكم</a>
+
+    <div class="cert-frame">
+        <div class="inner-line">
+            <div class="cert-header">
+                <div class="gov-name">جمهورية مصر العربية</div>
+                <div>وزارة التعليم العالي</div>
+                <img src="c:\Users\c 2 d\OneDrive\Desktop\met\Screenshot 2026-04-20 143402.png" class="uni-logo">
+                <h1 class="cert-title">شهادة بكالوريوس</h1>
+            </div>
+
+            <div class="cert-content">
+                تشهد جامعة <span class="user-data" id="uni-name">---</span> بأن السيد/ <br>
+                <span class="user-data" id="full-name">جاري التحميل...</span> <br>
+                المولود في جمهورية مصر العربية، والقيد برقم قومي: <br>
+                <span class="user-data" id="national-id">---</span> <br>
+                قد حصل على درجة البكالوريوس في <span class="user-data" id="faculty">---</span> <br>
+                بتقدير عام <span class="user-data" id="grade">---</span> <br>
+                وذلك في دور مايو لعام 2022.
+            </div>
+
+            <div class="signatures-area">
+                <div style="text-align: center;">مسجل عام الجامعة<br><br>_________</div>
+                <div class="seal">ID EGYPT<br>وثيقة مؤمنة</div>
+                <div style="text-align: center;">عميد الكلية<br><br>_________</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const name = localStorage.getItem('userName') || "المواطن";
+            const idInput = localStorage.getItem('userId') || "00000000000000";
+
+            document.getElementById('full-name').innerText = name;
+            document.getElementById('national-id').innerText = idInput;
+
+            const lastDigit = parseInt(idInput.charAt(idInput.length - 1));
+            
+            const faculty = document.getElementById('faculty');
+            const uni = document.getElementById('uni-name');
+            const grade = document.getElementById('grade');
+
+            if (lastDigit % 2 === 0) {
+  
+                faculty.innerText = "الحاسبات والمعلومات - قسم علوم الحاسب";
+                uni.innerText = "عين شمس";
+                grade.innerText = "إمتياز مع مرتبة الشرف";
+            } else if (lastDigit === 1 || lastDigit === 3) {
+
+                faculty.innerText = "التجارة - قسم المحاسبة";
+                uni.innerText = "القاهرة";
+                grade.innerText = "جيد جداً مرتفع";
+            } else {
+
+                faculty.innerText = "الهندسة - قسم الميكانيكا";
+                uni.innerText = "الإسكندرية";
+                grade.innerText = "جيد جداً";
+            }
+        };
+    </script>
+</body>
+</html>

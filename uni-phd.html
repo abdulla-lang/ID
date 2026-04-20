@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Egypt | السجل الوطني لدرجة الدكتوراه (Ph.D)</title>
+    <style>
+        :root { 
+            --egypt-gold: #c5a059; 
+            --dark-black: #050505; 
+            --paper-cream: #fffdf5; 
+        }
+        
+        body { 
+            background-color: var(--dark-black); 
+            background-image: linear-gradient(rgba(0,0,0,0.96), rgba(0,0,0,0.96)), 
+                              url('c:/Users/c 2 d/OneDrive/Desktop/met/Screenshot 2026-04-20 143402.png');
+            background-size: cover;
+            background-attachment: fixed;
+            color: #1a1a1a; 
+            font-family: 'Times New Roman', Times, serif; 
+            margin: 0; padding: 20px;
+        }
+
+        .phd-frame {
+            max-width: 900px;
+            margin: 30px auto;
+            background: var(--paper-cream);
+            padding: 60px;
+            border: 20px solid var(--dark-black);
+            outline: 3px solid var(--egypt-gold);
+            position: relative;
+            box-shadow: 0 0 70px rgba(0,0,0,0.9);
+            background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png'); /* ملمس ورقي */
+        }
+        .corner {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border: 4px solid var(--egypt-gold);
+            opacity: 0.8;
+        }
+        .top-right { top: 15px; right: 15px; border-left: 0; border-bottom: 0; }
+        .top-left { top: 15px; left: 15px; border-right: 0; border-bottom: 0; }
+        .bottom-right { bottom: 15px; right: 15px; border-left: 0; border-top: 0; }
+        .bottom-left { bottom: 15px; left: 15px; border-right: 0; border-top: 0; }
+
+        .cert-header { text-align: center; margin-bottom: 40px; }
+        
+        .gov-name { font-size: 1.6rem; font-weight: bold; margin-bottom: 5px; }
+
+        .cert-title {
+            font-size: 3.8rem;
+            color: #800000; 
+            margin: 20px 0;
+            font-family: 'Amiri', serif; 
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .cert-body {
+            font-size: 1.6rem;
+            line-height: 2.1;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .user-data {
+            color: #000;
+            font-weight: bold;
+            border-bottom: 2px solid var(--egypt-gold);
+            padding: 0 10px;
+        }
+
+        .thesis-section {
+            background: rgba(197, 160, 89, 0.06);
+            padding: 25px;
+            border-radius: 5px;
+            margin: 30px 50px;
+            border: 1px dashed var(--egypt-gold);
+            font-style: italic;
+            font-size: 1.4rem;
+        }
+
+        .signatures {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 70px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .embossed-seal {
+            width: 100px;
+            height: 100px;
+            background: #fff;
+            border: 4px solid var(--egypt-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--egypt-gold);
+            font-size: 0.8rem;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(197, 160, 89, 0.3);
+            transform: rotate(-15deg);
+        }
+
+        .watermark-large {
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            opacity: 0.07;
+            pointer-events: none;
+        }
+
+        .back-nav {
+            display: block;
+            margin: 0 auto 20px;
+            width: fit-content;
+            color: var(--egypt-gold);
+            text-decoration: none;
+            font-family: 'Segoe UI', sans-serif;
+            border: 1px solid var(--egypt-gold);
+            padding: 8px 25px;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+        .back-nav:hover { background: var(--egypt-gold); color: #000; }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-nav">← العودة لمنصة السيادة الرقمية</a>
+
+    <div class="phd-frame">
+        <div class="corner top-right"></div>
+        <div class="corner top-left"></div>
+        <div class="corner bottom-right"></div>
+        <div class="corner bottom-left"></div>
+        
+        <img src="c:\Users\c 2 d\OneDrive\Desktop\met\Screenshot 2026-04-20 143402.png" class="watermark-large">
+
+        <div class="cert-header">
+            <div class="gov-name">جمهورية مصر العربية</div>
+            <div style="font-size: 1.3rem;">وزارة التعليم العالي والبحث العلمي</div>
+            <img src="c:\Users\c 2 d\OneDrive\Desktop\met\Screenshot 2026-04-20 143402.png" height="95" style="margin: 20px 0;">
+            <h1 class="cert-title">دكتوراه الفلسفة </h1>
+        </div>
+
+        <div class="cert-body">
+            بناءً على موافقة مجلس جامعة <span class="user-data" id="uni-name">القاهرة</span> المنعقد برئاسة الأستاذ الدكتور رئيس الجامعة، <br>
+            قرر السيد الأستاذ الدكتور وزير التعليم العالي منح الباحث/ <br>
+            <span class="user-data" id="user-name">جاري التحميل...</span> <br>
+            المقيد برقم قومي: <span class="user-data" id="user-id">---</span> <br>
+            درجة الدكتوراه في <span class="user-data" id="specialty">---</span> <br>
+            بتقدير عام <span class="user-data">امتياز مع مرتبة الشرف الأولى</span> <br>
+            عن أطروحته العلمية وموضوعها:
+        </div>
+
+        <div class="thesis-section" id="thesis-title">
+            "جاري استدعاء عنوان الأطروحة من الأرشيف الوطني الأكاديمي..."
+        </div>
+
+        <div class="signatures">
+            <div style="text-align: center;">عميد الكلية<br><br>_________</div>
+            <div class="embossed-seal">ID EGYPT<br>وثيقة مؤمنة</div>
+            <div style="text-align: center;">رئيس الجامعة<br><br>_________</div>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const name = localStorage.getItem('userName') || "المواطن";
+            const idInput = localStorage.getItem('userId') || "00000000000000";
+
+            document.getElementById('user-name').innerText = name;
+            document.getElementById('user-id').innerText = idInput;
+
+            const lastDigit = parseInt(idInput.charAt(idInput.length - 1));
+            
+            const uni = document.getElementById('uni-name');
+            const specialty = document.getElementById('specialty');
+            const thesis = document.getElementById('thesis-title');
+
+            if (lastDigit % 2 === 0) {
+                uni.innerText = "عين شمس";
+                specialty.innerText = "علوم الحاسب والذكاء الاصطناعي السيادي";
+                thesis.innerText = '"خوارزميات التشفير الكمي في حماية الشبكات الحكومية الحساسة: نموذج تطبيقي للدفاع الرقمي المصري"';
+            } else if (lastDigit === 1 || lastDigit === 3) {
+
+                uni.innerText = "القاهرة";
+                specialty.innerText = "الاقتصاد القياسي والعلوم المالية";
+                thesis.innerText = '"تحليل النظم المالية العصبية للتنبؤ بالأزمات الاقتصادية وتأثيرها على الناتج المحلي الإجمالي في مصر والرؤية المستقبلية لعام 2030"';
+            } else {
+
+                uni.innerText = "الإسكندرية";
+                specialty.innerText = "الهندسة الميكانيكية - الطاقة النظيفة المستدامة";
+                thesis.innerText = '"تحسين كفاءة أنظمة الهيدروجين الأخضر في المناطق الصحراوية باستخدام تقنيات النانو في المواد المحفزة"';
+            }
+        };
+    </script>
+</body>
+</html>
