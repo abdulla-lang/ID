@@ -6,15 +6,15 @@
     <title>ID Egypt | المنصة الوطنية الشاملة</title>
     <style>
         :root { 
-            --egypt-gold: #c5a059; 
+            --egypt-gold: #ffffff; 
             --dark-black: #0a0a0a; 
-            --off-white: #f4f4f4;
+            --off-white: #645927;
         }
         
         body { 
             background-color: var(--dark-black); 
             background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), 
-                              url('c:/Users/c 2 d/OneDrive/Desktop/met/Screenshot 2026-04-20 143402.png');
+                              url('Screenshot 2026-04-20 143402.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -90,7 +90,7 @@
 
     <header>
         <div class="logo">
-            <img src="c:\Users\c 2 d\OneDrive\Desktop\met\Screenshot 2026-04-20 143402.png" alt="ID Egypt" style="height: 45px;">
+            <img src="Screenshot 2026-04-20 143402.png" alt="ID Egypt" style="height: 45px;">
         </div>
         <div id="nav-links" style="display:none;">
             <span id="welcome-msg" style="margin-left:20px; font-weight:bold; color:var(--egypt-gold);"></span>
@@ -172,10 +172,9 @@
             const id = document.getElementById('idInput').value;
             
             if (name.trim() !== "" && id.length >= 1) {
-                // حفظ البيانات الأساسية للدخول السريع
                 localStorage.setItem('userName', name);
                 localStorage.setItem('userId', id);
-                localStorage.setItem('isRegistered', 'true'); // نعتبره مسجل للدخول القادم
+                localStorage.setItem('isRegistered', 'true'); 
                 showDashboard(name, id);
             } else {
                 alert("برجاء إدخال بيانات الهوية أو الضغط على 'تسجيل لأول مرة'.");
@@ -198,7 +197,6 @@
             }
         }
 
-        // عند التحميل: لو البيانات موجودة افتح اللوحة علطول
         window.onload = function() {
             const savedName = localStorage.getItem('userName');
             const savedId = localStorage.getItem('userId');
